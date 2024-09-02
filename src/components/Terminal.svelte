@@ -116,7 +116,7 @@
         height: 500px;
         aspect-ratio: 5/3;
         background-color: #1e1e1e;
-        border-radius: $b-rad;
+        border-radius: 10px;
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.521);
         animation: openTerminal 1s forwards;
     }
@@ -192,7 +192,7 @@
     header {
         width: 100%;
         height: 32px;
-        border-radius: $b-rad $b-rad 0 0;
+        border-radius: 10px 10px 0 0;
         background-color: #383838;
         display: flex;
         align-items: center;
