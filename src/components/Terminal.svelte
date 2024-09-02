@@ -1,12 +1,10 @@
 <script>
     import { createEventDispatcher, afterUpdate } from "svelte";
-    import { scale, fade } from "svelte/transition";
-
-
+    import { blur, scale } from "svelte/transition";
 
     const commands = ["help", "start", "clear"];
     let cliLines = [];
-    let inputValue = "start";
+    let inputValue = "";
     let showPortfolio = false;
 
     const dispatch = createEventDispatcher();
@@ -62,8 +60,8 @@
 });
 </script>
 
-{#if !showPortfolio}
-<div id="terminal" transition:fade>
+{#if showPortfolio}
+<div id="terminal" transition:blur>
     <section transition:scale>
         <header>
             <div class="buttons">
@@ -119,6 +117,17 @@
         aspect-ratio: 5/3;
         background-color: #1e1e1e;
         border-radius: $b-rad;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.521);
+        animation: openTerminal 1s forwards;
+    }
+
+    @keyframes openTerminal {
+        0% {
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(0%);
+        }
     }
 
     .cli {
@@ -223,4 +232,10 @@
             background-color: #2dc745;
         }
     }
+
+    @media (max-width: 900px) {
+    #terminal {
+        display: none;
+    }
+}
 </style>
