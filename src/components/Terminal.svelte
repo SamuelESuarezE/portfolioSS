@@ -1,11 +1,11 @@
 <script>
     import { createEventDispatcher, afterUpdate } from "svelte";
     import { blur, scale } from "svelte/transition";
+    import {showPortfolio} from "../store/globalStore.js"
 
     const commands = ["help", "start", "clear"];
     let cliLines = [];
     let inputValue = "";
-    let showPortfolio = false;
 
     const dispatch = createEventDispatcher();
 
@@ -60,7 +60,7 @@
 });
 </script>
 
-{#if showPortfolio}
+{#if showPortfolio.}
 <div id="terminal" transition:blur>
     <section transition:scale>
         <header>
