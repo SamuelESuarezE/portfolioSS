@@ -4,14 +4,14 @@
 ---
 
 <section class="container">
-    <div class="perfil">
+    <a class="perfil card" transition:name="perfil" href="/perfil">
         Perfil
-    </div>
-    <div class="mision_vision">
+    </a>
+    <a class="mision_vision card" transition:name="mision_vision" href="/mision-vision">
         Mision, vision y valores
-    </div>
+    </a>
     <TerminalCard client:load/>
-    <div class="center">
+    <div class="center card">
         <img class="logo" src="/favicon.png" alt="">
         <span>
             <h1>SAMUEL SUAREZ</h1>
@@ -22,26 +22,32 @@
         <i class="bi bi-file-earmark-person-fill"></i>
         <p>CV</p>
     </a>
-    <div class="servicios">
-        Servicios
-    </div>
-    <div class="objetivos">
+    <a class="servicios card">
+        <h1>SERVICIOS</h1>
+        <article class="servicios_buttons">
+            <button>Webs Estaticas</button>
+            <button>Webs Dinamicas</button>
+            <button>API RESTful</button>
+            <button>Diseño y modelado de base de datos</button>
+            <button>Desarrollo de aplicaciones web completas</button>
+        </article>
+    </a>
+    <a class="objetivos card" transition:name="objetivos" href="/objetivos">
         Objetivos Profesionales
-    </div>
-    <div class="proyectos">
+    </a>
+    <a class="proyectos card" transition:name="proyectos" href="/proyectos">
         Proyectos
-    </div>
-    <div class="certificaciones">
+    </a>
+    <a class="certificaciones card" transition:name="certificaciones" href="/certificaciones">
         Certificaciones
+    </a>
+    <div class="gif card">
     </div>
-    <div class="gif">
-    </div>
-    <div class="english">
+    <div class="english card">
         <h1>ENGLISH LEVEL</h1>
         <h1>B1</h1>
     </div>
-
-    <div class="contactame">
+    <div class="contactame card">
         <a class="icon" target="_blank" href="https://www.linkedin.com/in/samuel-suarez/">
             <i class="bi bi-linkedin"></i>
         </a>
@@ -63,6 +69,31 @@
 
 
 <style lang="scss">
+    .card {
+        border-radius: 20px;
+        font-family: Now;
+        background-color: $dark-blue;
+        display: grid;
+        place-content: center;
+        color: $white;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+
+
+        &:hover {
+            transform: scale(1.03);
+            border: 1px solid $white;
+            box-shadow: 0px 0px 15px #ffffff9d;
+
+
+        }
+
+        // Terminal
+        &:nth-child(3) {
+            grid-area: 1 / 6;
+        }
+    }
+
     .container {
         width: 100%;
         height: calc(100% - 80px);
@@ -167,6 +198,37 @@
 
     .servicios {
         grid-area: 2 / 5 / 2 / 7;
+        background-color: rgba(12, 110, 155, 0.678);
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        padding: 30px;
+        gap: 15px;
+        text-decoration: none;
+
+        h1 {
+            color: rgb(27, 163, 226);
+        }
+
+        .servicios_buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 100%;
+
+            button {
+                cursor: pointer;
+                font-family: Fira Code;
+                background-color: rgb(27, 163, 226);
+                border-radius: 10px;
+                padding-inline: 10px;
+                border: none;
+                height: 20px;
+                width: auto;
+            }
+
+        }
+
     }
 
     .objetivos {
@@ -183,7 +245,6 @@
 
     .contactame {
         grid-area: 4 / 5 / 4 / 7;
-       
         display: flex;
         align-items: center;
         gap: 50px;
@@ -204,27 +265,7 @@
         }
     }
 
-    div {
-        border-radius: 20px;
-        font-family: Now;
-        background-color: $dark-blue;
-        display: grid;
-        place-content: center;
-        color: $white;
-        cursor: pointer;
-        transition: 0.2s ease-in-out;
 
-        &:hover {
-            transform: scale(1.03);
-            border: 1px solid $white;
-            box-shadow: 0px 0px 15px #ffffff9d;
-        }
-
-        // Terminal
-        &:nth-child(3) {
-            grid-area: 1 / 6;
-        }
-    }
 
 
 

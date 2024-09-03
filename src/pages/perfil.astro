@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro"
+---
+
+<Layout title="Perfil">
+    <div class="perfil" transition:name="perfil">
+        Perfil
+    </div>
+</Layout>
+
+
+<style lang="scss">
+    @import url("../styles/global.sass");
+
+    .perfil {
+        border-radius: 20px;
+        font-family: Now;
+        background-color: $dark-blue;
+        height: 200px;
+        width: 200px;
+        place-content: center;
+        color: $white;
+        cursor: pointer;
+    }
+</style>

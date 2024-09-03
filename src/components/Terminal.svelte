@@ -3,7 +3,7 @@
     import { blur } from "svelte/transition";
     import {showPortfolio} from "../store/globalStore.js"
 
-    const commands = ["start", "help", "clear"];
+    const commands = ["start", "help", "clear", "exit"];
     let cliLines = [];
     let inputValue = "";
 
@@ -41,6 +41,12 @@
             if (inputValue === "clear") {
                 cliLines = [];
                 inputValue = "";
+                return
+            }
+
+            // Exit
+            if (inputValue === "exit") {
+                window.close()
                 return
             }
 

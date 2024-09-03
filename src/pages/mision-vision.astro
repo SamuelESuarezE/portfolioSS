@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro"
+---
+
+<Layout title="Mision y Vision">
+    <div class="mision_vision" transition:name="mision_vision">
+        Mision, vision y valores
+    </div>
+</Layout>
+
+
+<style lang="scss">
+    @import url("../styles/global.sass");
+
+    .mision_vision {
+        border-radius: 20px;
+        font-family: Now;
+        background-color: $dark-blue;
+        height: 200px;
+        width: 200px;
+        place-content: center;
+        color: $white;
+        cursor: pointer;
+    }
+</style>
