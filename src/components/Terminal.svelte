@@ -9,7 +9,7 @@
 
     const dispatch = createEventDispatcher();
 
-    function addLine(event) {
+    const addLine = (event) => {
         
         if (event.key === "Enter") {
             if (inputValue === "") return;
@@ -26,7 +26,7 @@
                 cliLines = [...cliLines, "Portfolio starting..."]
                 inputValue = "";
                 setTimeout(() => {
-                    showPortfolio = true
+                    showPortfolio.set = true
                 }, 1500)
 
                 return
@@ -60,7 +60,7 @@
 });
 </script>
 
-{#if showPortfolio.}
+{#if !showPortfolio}
 <div id="terminal" transition:blur>
     <section transition:scale>
         <header>
