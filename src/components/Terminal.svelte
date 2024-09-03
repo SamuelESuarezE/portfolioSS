@@ -1,13 +1,11 @@
 <script>
-    import { createEventDispatcher, afterUpdate } from "svelte";
-    import { blur, scale } from "svelte/transition";
+    import { afterUpdate } from "svelte";
+    import { blur } from "svelte/transition";
     import {showPortfolio} from "../store/globalStore.js"
 
-    const commands = ["help", "start", "clear"];
+    const commands = ["start", "help", "clear"];
     let cliLines = [];
     let inputValue = "";
-
-    const dispatch = createEventDispatcher();
 
     const addLine = (event) => {
         
@@ -26,7 +24,7 @@
                 cliLines = [...cliLines, "Portfolio starting..."]
                 inputValue = "";
                 setTimeout(() => {
-                    showPortfolio.set = true
+                    showPortfolio.update(value => !value);
                 }, 1500)
 
                 return
@@ -58,11 +56,12 @@
     cliContainer.scrollTop = cliContainer.scrollHeight;
   }
 });
+
 </script>
 
-{#if !showPortfolio}
+{#if $showPortfolio}
 <div id="terminal" transition:blur>
-    <section transition:scale>
+    <section>
         <header>
             <div class="buttons">
                 <button class="red"></button>
@@ -109,7 +108,7 @@
 		justify-content: center;
 		align-items: center;
         position: absolute;
-        z-index: 2;
+        z-index: 5;
     }
 
     section {
