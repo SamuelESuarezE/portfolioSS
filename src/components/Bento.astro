@@ -5,7 +5,10 @@
 
 <section class="container">
     <a class="perfil card" transition:name="perfil" href="/perfil">
-        Perfil
+        <div class="perfil_info">
+            <h1>PERFIL PROFESIONAL</h1>
+            <p>Desarrollador web FullStack especializado en backend, con sólida experiencia en proyectos y un enfoque competitivo.</p>
+        </div>
     </a>
     <a class="mision_vision card" transition:name="mision_vision" href="/mision-vision">
         Mision, vision y valores
@@ -78,6 +81,7 @@
         color: $white;
         cursor: pointer;
         transition: 0.2s ease-in-out;
+        text-decoration: none;
 
 
         &:hover {
@@ -163,6 +167,28 @@
 
     .perfil {
         grid-area: 1 / 1 / 3 / 3;
+        display: flex;
+        position: relative;
+
+        .perfil_info {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            padding-right: 20px;
+
+            h1 {
+                font-size: 30px;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-family: Montserrat;
+                font-weight: 500;
+            }
+
+
+        }
+
     }
 
     .mision_vision {

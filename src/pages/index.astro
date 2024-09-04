@@ -9,20 +9,6 @@
 	<main >
 		<Bento />
 	</main>
-
-	<script is:inline>
-        const container = document.querySelector('main');
-        
-        document.addEventListener('mousemove', (event) => {
-            const { clientX: mouseX, clientY: mouseY } = event;
-            const { innerWidth: windowWidth, innerHeight: windowHeight } = window;
-
-            const offsetX = (mouseX / windowWidth - 0.5) * 20; // Adjust multiplier for sensitivity
-            const offsetY = (mouseY / windowHeight - 0.5) * 20; // Adjust multiplier for sensitivity
-
-            container.style.backgroundPosition = `${50 - offsetX}% ${50 - offsetY}%`;
-        });
-    </script>
 </Layout>
 
 <style lang="scss">
@@ -30,7 +16,7 @@
 	main {
 		height: 100dvh;
 		display: flex;
-		background-image: url("/bg.jpg");
+		background-color: $black;
 		background-size: 110vh;
 
 	}
