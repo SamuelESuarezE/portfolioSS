@@ -66,7 +66,7 @@
 
 </script>
 
-{#if $showPortfolio}
+{#if !$showPortfolio}
 <div id="terminal" transition:blur>
     <section>
         <header>
