@@ -1,9 +1,9 @@
 <script>
-    import { afterUpdate } from "svelte";
+    import { afterUpdate, onMount } from "svelte";
     import { blur } from "svelte/transition";
     import {showPortfolio} from "../store/globalStore.js"
 
-    const commands = ["start", "help", "clear", "exit"];
+    const commands = ["start", "help", "clear"];
     let cliLines = [];
     let inputValue = "";
 
@@ -24,8 +24,13 @@
                 cliLines = [...cliLines, "Portfolio starting..."]
                 inputValue = "";
                 setTimeout(() => {
+                    window.scrollTo({
+                        top: 0,     
+                        behavior: "smooth"
+                    });
                     showPortfolio.update(value => !value);
                 }, 1500)
+
 
                 return
             }
@@ -44,12 +49,6 @@
                 return
             }
 
-            // Exit
-            if (inputValue === "exit") {
-                window.close()
-                return
-            }
-
 
             cliLines = [...cliLines, inputValue];
             inputValue = "";
@@ -58,14 +57,16 @@
 
     let cliContainer;
     afterUpdate(() => {
-  if (cliContainer) {
-    cliContainer.scrollTop = cliContainer.scrollHeight;
-  }
-});
+        if (cliContainer) {
+            cliContainer.scrollTop = cliContainer.scrollHeight;
+        }
+    });
+
+
 
 </script>
 
-{#if $showPortfolio}
+{#if !$showPortfolio}
 <div id="terminal" transition:blur>
     <section>
         <header>
@@ -93,6 +94,7 @@
                         bind:value={inputValue}
                         on:keydown={addLine}
                         type="text"
+                        placeholder="start"
                     />
                 </li>
             </ul>
@@ -107,13 +109,13 @@
     @import "../styles/global.sass";
 
     #terminal {
-        height: 100dvh;
+        position: fixed;
+        height: 100%;
         width: 100%;
     	background-color: $black;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-        position: absolute;
         z-index: 5;
     }
 
@@ -238,9 +240,9 @@
         }
     }
 
-    @media (max-width: 900px) {
-    #terminal {
-        display: none;
+    @media (width < 900px) {
+        #terminal {
+            display: none;
+        }
     }
-}
 </style>

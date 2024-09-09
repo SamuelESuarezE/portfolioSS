@@ -2,39 +2,310 @@
 import Layout from "../layouts/Layout.astro"
 ---
 
-<Layout title="Perfil">
+<Layout title="Perfil Profesional">
     <main>
-        <header class="perfil" transition:name="perfil">
-            <h1>Perfil Profesional</h1>
-        </header>
-
+        <div class="first-container">
+            <a class="perfil" transition:name="perfil" href="/">
+                <i class="bi bi-box-arrow-left"></i>
+                <div class="animated_container">
+                    <img src="/samuel_suarez.png" alt="Samuel Suarez">
+                </div>
+            </a>
+            <div class="perfil-profesional">
+                <h1>PERFIL PROFESIONAL</h1>
+                <p>Mi nombre es Samuel Enrique Suárez Estupiñán, y soy un <b>desarrollador web FullStack</b> especializado en backend, con experiencia sólida en proyectos y un enfoque competitivo. Me destaco por <b>aprender rápidamente, resolver problemas de manera efectiva y trabajar en equipo.</b>
+                <br><br>
+                Además, cuento con habilidades organizativas y comunicativas destacadas que complementan mi perfil técnico. Estoy en busca de oportunidades para aplicar y expandir mis conocimientos en desarrollo de software, con el objetivo de crear soluciones innovadoras en el ámbito digital y contribuir al éxito de proyectos desafiantes.</p>
+            </div>
+        </div>
+        <div class="valores">
+            <p>Adaptabilidad al Cambio</p>
+            <p>Orientación al Logro</p>
+            <p>Comunicación Efectiva</p>
+            <p>Resolución de Problemas</p>
+            <p>Proactividad</p>
+            <p>Autodidacta</p>
+        </div>
+        <div class="mision-vision">
+            <div class="mision">
+                <h1>MISIÓN</h1>
+                <p>Mi misión es crear soluciones tecnológicas innovadoras y eficientes que impulsen el desarrollo de proyectos en el ámbito digital. A través de mi enfoque competitivo, capacidad de adaptación y aprendizaje ágil, busco ofrecer un impacto positivo en cada proyecto en el que participo, superando desafíos técnicos y organizativos con responsabilidad y disciplina.</p>
+            </div>
+            <div class="vision">
+                <h1>VISIÓN</h1>
+                <p>Mi visión es convertirme en un arquitecto de software reconocido, especializado en infraestructura, servidores, DevOps y ciberseguridad. Aspiro a ser un referente en la creación de sistemas robustos y seguros, contribuyendo de manera significativa al crecimiento y éxito de las organizaciones en un entorno tecnológico en constante evolución.</p>
+            </div>
+        </div>
+        <div class="certificaciones">
+            <h1>CERTIFICACIONES</h1>
+            <div class="certificaciones-container">
+                <div class="certificacion">
+                    <img src="/certificates/asistencia.PNG" alt="">
+                    <p>SENA</p>
+                    <p>Técnico en Asistencia Administrativa</p> <!-- "Tecnico" corregido a "Técnico" -->
+                </div>
+                <div class="certificacion">
+                    <img src="/certificates/comportamiento_emprendedor.PNG" alt="">
+                    <p>SENA</p>
+                    <p>Comportamiento Emprendedor</p>
+                </div>
+                <div class="certificacion">
+                    <img src="/certificates/habilidades_digitales.PNG" alt="">
+                    <p>SENA</p>
+                    <p>Desarrollo de Habilidades Digitales para la Gestión de la Información</p> <!-- "Gestion" corregido a "Gestión" -->
+                </div>
+                <div class="certificacion">
+                    <img src="/certificates/github.PNG" alt="">
+                    <p>Microsoft</p>
+                    <p>Introducción a GitHub</p>
+                </div>
+                <div class="certificacion">
+                    <img src="/certificates/crear_modificar_git.PNG" alt="">
+                    <p>Microsoft</p>
+                    <p>Procedimientos para crear y modificar un proyecto de Git</p>
+                </div>
+                <div class="certificacion">
+                    <img src="/certificates/ramas_git.PNG" alt="">
+                    <p>Microsoft</p>
+                    <p>Edición de código mediante creación de ramas y combinación en Git</p>
+                </div>
+            </div>
+        </div>
     </main>
 </Layout>
+
 
 
 <style lang="scss">
     @import url("../styles/global.sass");
 
-    main {
-        padding-block: 40px;
-        display: flex;
-        justify-content: center;
+    .certificaciones {
+    
+        
+
+        h1 {
+            margin-bottom: 30px;
+        }
     }
 
-    header {
+    .certificaciones-container {
+        margin: auto;
+        width: 80%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 250px;
+        gap: 20px;
+
+        .certificacion {
+            overflow: hidden;
+            border-radius: 10px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 10px;
+            
+
+            p {
+                text-align: center;
+    
+                font-weight: bold;
+            }
+
+            &:hover {
+                p {
+                    z-index: 2;
+                    transition: 0.2s;
+
+
+                }
+
+
+                img {
+                    opacity: 0.2;
+                }
+            }
+
+            img {
+                transition: 0.2s;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+
+    h1 {
+        font-family: Now;
+        color: $white;
+    }
+
+    p {
+        font-family: Montserrat;
+        color: $white;
+    }
+    
+    .mision-vision {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-block: 50px;
+        gap: 30px;
+
+        .mision, .vision {
+            p {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .first-container {
         display: flex;
-        align-items: center;
+    }
+
+    .perfil-profesional {
+        width: calc(100% - 400px);
+        padding-inline-start: 30px;
+        color: $white;
+        display: flex;
+        flex-direction: column;
         justify-content: center;
+
+        h1 {
+            font-size: 2.2vw;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1vw;
+            font-weight: 400;
+        }
+
+    }
+
+    
+    .valores {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        color: $white;
+        font-family: Montserrat;
+        justify-content: center;
+
+        p {
+            padding: 5px;
+            font-weight: bold;
+            border-radius: 5px;
+            background-color: $blue;
+        }
+    }
+
+    main {
+        width: 60%;
+        padding-block: 40px;
     }
 
     .perfil {
-        width: 80%;
-        border-radius: 20px;
-        font-family: Now;
+        display: flex;
+        height: 500px;
+        width: 400px;
         background-color: $dark-blue;
-        height: 200px;
-        place-content: center;
-        color: $white;
-        cursor: pointer;
+        border-radius: 20px;
+        position: relative;
+
+        i {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            color: $white;
+            font-size: 30px;
+        }
+
+        .animated_container {
+            height: 100%;
+            margin: auto;
+            overflow: hidden;
+            display: flex;
+            align-items: end;
+
+            img {
+                height: 100%;
+                filter: drop-shadow(2px 5px 10px rgba(0, 0, 0, 0.748));
+            }
+        }
+
+    }
+
+    @media (width < 1300px) {
+        main {
+            width: 80%;
+        }
+
+        .first-container {
+            display: flex;
+
+            .perfil {
+                width: 300px;
+                height: 400px;
+            }
+        }
+
+
+        .perfil-profesional {
+            width: calc(100% - 300px);
+            padding-inline-start: 30px;
+            color: $white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            h1 {
+                font-size: 2em;
+                font-family: Now;
+                margin-bottom: 20px;
+            }
+
+            p {
+                font-family: Montserrat;
+                font-size: 1em;
+                font-weight: 400;
+            }
+
+        }
+    }
+
+    @media (width < 900px) {
+        .certificaciones-container {
+            grid-template-columns: 1fr;
+            width: 100%;
+        }
+
+        .mision-vision {
+            grid-template-columns: 1fr;
+        }
+
+        .first-container {
+            flex-direction: column;
+            align-items: center;
+
+            .perfil {
+                width: 100%;
+
+                img {
+                    height: 100%;
+                }
+            }
+
+            .perfil-profesional {
+                padding: 0;
+                margin-top: 40px;
+                width: 100%;
+            }
+        }
+
+        .valores {
+            font-size: 0.9em;
+        }
     }
 </style>

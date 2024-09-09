@@ -3,23 +3,402 @@ import Layout from "../layouts/Layout.astro"
 ---
 
 <Layout title="Proyectos">
-    <div class="proyectos" transition:name="proyectos">
-        Perfil
-    </div>
+    <main>
+        <div class="first-container" >
+            <div class="proyectos-info1">
+                <h1>PROYECTOS</h1>
+                <p>A lo largo de mi formacion como desarrollador web FullStack, he trabajado en una variedad de proyectos que me han permitido aplicar y perfeccionar mis <b>mis habilidades tanto en frontend como en backend.</b>
+                <br><br>    
+                Cada proyecto ha sido una oportunidad para <b>enfrentar nuevos desafíos y desarrollar soluciones innovadoras</b> que aporten valor en el ámbito digital. Con un enfoque orientado a resultados, siempre busco superar las expectativas y contribuir al éxito de cada iniciativa en la que participo.</b>
+            </div>
+            <a class="proyectos" transition:name="proyectos" href="/">
+                <i class="bi bi-box-arrow-left"></i>
+                <div class="animated_container">
+                    <img src="/proyectos.png" alt="Proyectos">
+                </div>
+            </a>
+            <div class="proyectos-info2">
+                <h1>PROYECTOS</h1>
+                <p>A lo largo de mi formacion como desarrollador web FullStack, he trabajado en una variedad de proyectos que me han permitido aplicar y perfeccionar mis <b>mis habilidades tanto en frontend como en backend.</b>
+                <br><br>    
+                Cada proyecto ha sido una oportunidad para <b>enfrentar nuevos desafíos y desarrollar soluciones innovadoras</b> que aporten valor en el ámbito digital. Con un enfoque orientado a resultados, siempre busco superar las expectativas y contribuir al éxito de cada iniciativa en la que participo.</b>
+            </div>
+        </div>
+        <div class="proyectos-container">
+            <div class="proyecto-card">
+                <div class="proyecto-card-img-container">
+                    <img src="/projects/portfolio.PNG" alt="">
+                    <div class="source">
+                        <a target="_blank" href="https://github.com/SamuelESuarezE/portfolioSS">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a target="_blank" href="https://samuelsuarezdev.netlify.app/">
+                            <i class="bi bi-globe"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="proyecto-card-info">
+                    <h1>Portafolio Personal</h1>
+                    <small>Septiembre 2024</small>
+                    <p>Pagina web que incluye una visión integral de mi carrera como desarrollador web FullStack. Encontrarás información sobre mi perfil profesional, misión y visión, las tecnologías que manejo, los servicios que ofrezco, así como ejemplos de proyectos que he desarrollado.</p>
+                    <div class="tecnologias-container">
+                        <p>Astro</p>
+                        <p>Sass</p>
+                        <p>JavaScript</p>
+                        <p>Svelte</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="proyecto-card">
+                <div class="proyecto-card-img-container">
+                    <img src="/projects/password.png" alt="">
+                    <div class="source">
+                        <a target="_blank" href="https://github.com/SamuelESuarezE/examenEncriptador">
+                            <i class="bi bi-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="proyecto-card-info">
+                    <h1>Encriptador Contraseñas</h1>
+                    <small>Agosto 2024</small>
+                    <p>Es una aplicación que permite encriptar y desencriptar texto de forma bidireccional, siguiendo un patrón específico para cada vocal. Cuenta con una interfaz intuitiva para que los usuarios ingresen texto, elijan entre encriptar o desencriptar, y copien fácilmente el resultado al portapapeles. </p>
+                    <div class="tecnologias-container">
+                        <p>VueJS</p>
+                        <p>ExpressJS</p>
+                        <p>JavaScript</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="proyecto-card">
+                <div class="proyecto-card-img-container">
+                    <img src="/projects/proyectoWeb.PNG" alt="">
+                    <div class="source">
+                        <a target="_blank" href="https://github.com/SamuelESuarezE/proyectoWeb/tree/parte_1">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a target="_blank" href="https://samuelesuareze.github.io/proyectoWeb/">
+                            <i class="bi bi-globe"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="proyecto-card-info">
+                    <h1>Food</h1>
+                    <small>Febrero 2024</small>
+                    <p>Página estática para un restaurante ficticio. Se centra en el diseño web responsivo, adaptándose a diferentes dispositivos y tamaños de pantalla, y presenta secciones clave como el menú, información del local y contacto.</p>
+                    <div class="tecnologias-container">
+                        <p>VueJS</p>
+                        <p>ExpressJS</p>
+                        <p>JavaScript</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="proyecto-card">
+                <div class="proyecto-card-img-container">
+                    <img src="/projects/python.PNG" alt="">
+                    <div class="source">
+                        <a target="_blank" href="https://github.com/SamuelESuarezE/proyectoPython">
+                            <i class="bi bi-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="proyecto-card-info">
+                    <h1>Departamento Académico</h1>
+                    <small>Enero 2024</small>
+                    <p>Es un sistema de gestión por terminal que administra estudiantes, instructores, aulas, rutas académicas, notas y módulos. Facilita la administración eficiente de todos los aspectos educativos en una institución.</p>
+                    <div class="tecnologias-container">
+                        <p>Python</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        
+    </main>
 </Layout>
 
 
 <style lang="scss">
     @import url("../styles/global.sass");
 
-    .proyectos {
-        border-radius: 20px;
+    .proyectos-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 30px;
+        gap: 20px;
+
+        .proyecto-card {
+            display: flex;
+            background-color: rgb(0, 39, 111);
+            border-radius: 25px;
+            height: 300px;
+    
+
+
+            .proyecto-card-img-container {
+                width: 40%;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: 0.2s ease;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    border-radius: 20px 0px 0px 20px;
+                }
+
+                .source {
+                    display: flex;
+                    opacity: 0;
+                    position: absolute;
+                    background-color: rgba(0, 0, 0, 0.839);
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 20px 0px 0px 20px;
+                    top: 0;
+                    bottom: 0;
+                    gap: 20px;
+                    transition: 0.2s;
+                    justify-content: center;
+                    align-items: center;
+
+                    i {
+                        color: $white;
+                        font-size: 45px;
+                    }
+                }
+
+                &:hover {
+                    .source {
+                        opacity: 1;
+                    }
+
+                }
+
+
+            }
+
+            .proyecto-card-info {
+                width: 60%;
+                padding: 30px;
+                font-family: Montserrat;
+            
+                small {
+                    color: $white;
+                    font-family: Fira Code;
+                    font-weight: 500;
+                    font-size: 15px;
+                }
+
+                h1{
+                    font-size: 20px;
+                    font-family: Montserrat;
+                }
+
+                p {
+                    margin-block: 10px;
+                    font-size: 13px;
+                }
+
+                .tecnologias-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 5px;
+                    
+
+                    p {
+                        background-color: $blue;
+                        font-size: 15px;
+                        padding-inline: 10px;
+                        font-weight: 500;
+                        border-radius: 5px;
+                        margin: 0;
+                    }
+                }
+                
+            }
+
+            
+        }
+    }
+
+    h1 {
         font-family: Now;
-        background-color: $dark-blue;
-        height: 200px;
-        width: 200px;
-        place-content: center;
         color: $white;
-        cursor: pointer;
+    }
+
+    p {
+        font-family: Montserrat;
+        color: $white;
+    }
+    
+    .first-container {
+        display: flex;
+    }
+
+    .proyectos-info1 {
+        width: calc(100% - 400px);
+        padding-inline-end: 30px;
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h1 {
+            font-size: 2.2vw;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1vw;
+            font-weight: 400;
+        }
+
+    }
+
+    .proyectos-info2 {
+        display: none;
+    }
+
+    main {
+        width: 60%;
+        padding-block: 40px;
+    }
+
+    .proyectos {
+        display: flex;
+        height: 500px;
+        width: 400px;
+        background-color: rgb(0, 122, 166);
+        border-radius: 20px;
+        position: relative;
+
+        i {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            color: $white;
+            font-size: 30px;
+        }
+
+        .animated_container {
+            height: 100%;
+            margin: auto;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+
+            img {
+                height: 85%;
+                filter: drop-shadow(2px 5px 10px rgba(74, 74, 74, 0.501));
+            }
+        }
+
+    }
+
+    @media (width < 1700px) {
+        .proyectos-container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (width < 1300px) {
+        main {
+            width: 80%;
+        }
+
+        .first-container {
+            display: flex;
+
+            .proyectos {
+                width: 300px;
+                height: 400px;
+            }
+        }
+
+
+        .proyectos-info1 {
+            width: calc(100% - 300px);
+            padding-inline-start: 30px;
+            color: $white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            h1 {
+                font-size: 2em;
+                font-family: Now;
+                margin-bottom: 20px;
+            }
+
+            p {
+                font-family: Montserrat;
+                font-size: 1em;
+                font-weight: 400;
+            }
+
+        }
+    }
+
+    @media (width < 900px) {
+        .proyectos-container {
+            .proyecto-card{
+                height: auto;
+                flex-direction: column;
+
+                .proyecto-card-img-container {
+                    width: 100%;
+                    border-radius: 20px 20px 0px 0px;
+
+                    img {
+                        border-radius: 20px 20px 0px 0px;
+
+                    }
+                }
+
+                .proyecto-card-info {
+                    padding: 15px;
+                    width: 100%;
+                } 
+            }
+        }
+
+
+        .first-container {
+            flex-direction: column;
+            align-items: center;
+
+            .proyectos {
+                width: 100%;
+
+                img {
+                    height: 100%;
+                }
+            }
+
+            .proyectos-info1 {
+                display: none;
+            }
+
+            .proyectos-info2 {
+                padding: 0;
+                margin-top: 40px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+
+                h1 {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
     }
 </style>
+

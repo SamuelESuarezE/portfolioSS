@@ -1,56 +1,107 @@
 ---
     import { showPortfolio } from "../store/globalStore";
     import TerminalCard from "../components/TerminalCard.svelte"
+    import Clock from "../components/Clock.svelte"
 ---
 
 <section class="container">
-    <a class="perfil card" transition:name="perfil" href="/perfil">
-        <div class="perfil_info">
-            <h1>PERFIL PROFESIONAL</h1>
-            <p>Desarrollador web FullStack especializado en backend, con sólida experiencia en proyectos y un enfoque competitivo.</p>
-        </div>
-    </a>
-    <a class="mision_vision card" transition:name="mision_vision" href="/mision-vision">
-        Mision, vision y valores
-    </a>
-    <TerminalCard client:load/>
-    <div class="center card">
+    <div class="samuel card">
         <img class="logo" src="/favicon.png" alt="">
         <span>
             <h1>SAMUEL SUAREZ</h1>
             <p>FullStack Developer Junior</p>
         </span>
     </div>
-    <a class="cv" target="_blank" href="https://drive.google.com/file/d/1w5mb53OC7sXJ3VNAE4fe-Mlk7xGQ7NoE/view?usp=sharing">
+    <Clock client:load/>
+    <a class="perfil card" transition:name="perfil" href="/perfil">
+        <i class="bi bi-arrows-fullscreen"></i>
+        <div class="perfil_info">
+            <h1>PERFIL PROFESIONAL</h1>
+            <p>
+                Aquí podrás conocer más sobre mí, así como mi misión, visión y valores profesionales.
+            </p>
+        </div>
+        <div class="animated_container">
+            <img src="/samuel_suarez.png" alt="Samuel Suarez">
+        </div>
+    </a>
+    <a class="cv card" target="_blank" href="https://drive.google.com/file/d/1w5mb53OC7sXJ3VNAE4fe-Mlk7xGQ7NoE/view?usp=sharing">
+        <i class="bi bi-box-arrow-up-right"></i>
         <i class="bi bi-file-earmark-person-fill"></i>
         <p>CV</p>
     </a>
-    <a class="servicios card">
-        <h1>SERVICIOS</h1>
-        <article class="servicios_buttons">
-            <button>Webs Estaticas</button>
-            <button>Webs Dinamicas</button>
-            <button>API RESTful</button>
-            <button>Diseño y modelado de base de datos</button>
-            <button>Desarrollo de aplicaciones web completas</button>
-        </article>
-    </a>
-    <a class="objetivos card" transition:name="objetivos" href="/objetivos">
-        Objetivos Profesionales
-    </a>
     <a class="proyectos card" transition:name="proyectos" href="/proyectos">
-        Proyectos
+        <i class="bi bi-arrows-fullscreen"></i>
+        <div class="proyectos_info">
+            <h1>PROYECTOS</h1>
+            <p>
+                Echa un vistazo a los diferentes proyectos y experimentos en los que he trabajado y las tecnologías usadas.
+            </p>
+        </div>
+        <div class="proyectos_img_container">
+            <img src="/proyectos.png" alt="Proyectos">
+        </div>
     </a>
-    <a class="certificaciones card" transition:name="certificaciones" href="/certificaciones">
-        Certificaciones
-    </a>
+    <div class="tech card">
+        <h1>CON EXPERIENCIA EN:</h1>
+        <div class="tech_container">
+            <div class="tech_item">
+                <img src="/technologies/js.png" alt="">
+                <p>JavaScript</p>
+            </div>
+            <div class="tech_item">
+                <img src="/technologies/node.png" alt="">
+                <p>NodeJS</p>
+            </div>
+            <div class="tech_item">
+                <img src="/technologies/express-js.png" alt="">
+                <p>expressJS</p>
+            </div>
+            <div class="tech_item">
+                <img src="/technologies/mongodb.svg" alt="">
+                <p>MongoDB</p>
+            </div>
+            <div class="tech_item">
+                <img src="/technologies/mysql.png" alt="">
+                <p>MySQL</p>
+            </div>
+            <div class="tech_item">
+                <img src="/technologies/vuejs.png" alt="">
+                <p>VueJS</p>
+            </div>
+            <div class="tech_item">
+                <img src="/technologies/html.png" alt="">
+                <p>HTML</p>
+            </div>
+            <div class="tech_item">
+                <img src="/technologies/css.svg" alt="">
+                <p>CSS</p>
+            </div>
+            <div class="tech_item">
+                <img src="/technologies/git.png" alt="">
+                <p>Git</p>
+            </div>
+            <img class="aprendizaje" src="/technologies/constante.png" alt="">
+        </div>
+    </div>
+    <TerminalCard client:load/>
     <div class="gif card">
     </div>
-    <div class="english card">
-        <h1>ENGLISH LEVEL</h1>
-        <h1>B1</h1>
+    <div class="servicios card">
+        <h1>SERVICIOS:</h1>
+        <div class="servicios_container">
+            <div class="servicios_left">
+                <div>Webs Estáticas</div>
+                <div>API RESTful</div>
+            </div>
+            <img src="/servicios.png" alt="">
+            <div class="servicios_right">
+                <div>Webs Interactivas</div>
+                <div>Diseño y modelado de bases de datos</div>
+            </div>
+        </div>
     </div>
-    <div class="contactame card">
+    <div class="contact card">
         <a class="icon" target="_blank" href="https://www.linkedin.com/in/samuel-suarez/">
             <i class="bi bi-linkedin"></i>
         </a>
@@ -63,13 +114,12 @@
         <a class="icon" target="_blank" href="https://discord.com/users/529462595233644564">
             <i class="bi bi-discord"></i>
         </a>
-        <a class="icon" target="_blank" href="https://www.instagram.com/samuel_suarez02e/">
-            <i class="bi bi-instagram"></i>
-        </a>
     </div>
-
+    <div class="english card">
+        <h1>NIVEL DE INGLÉS</h1>
+        <h1>B1</h1>
+    </div>
 </section>
-
 
 <style lang="scss">
     .card {
@@ -79,125 +129,27 @@
         display: grid;
         place-content: center;
         color: $white;
-        cursor: pointer;
         transition: 0.2s ease-in-out;
         text-decoration: none;
 
-
         &:hover {
-            transform: scale(1.03);
-            border: 1px solid $white;
-            box-shadow: 0px 0px 15px #ffffff9d;
-
-
+            transform: scale(1.02);
         }
 
-        // Terminal
-        &:nth-child(3) {
-            grid-area: 1 / 6;
-        }
     }
 
     .container {
         width: 100%;
-        height: calc(100% - 80px);
         display: grid;
-        margin: 40px;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(4, 1fr);
+        place-content: center;
+        grid-template-columns: repeat(4, 275px);
+        grid-auto-rows: 275px;
         gap: 20px;
-
     }
 
-    .gif {
-        background-image: url("/coding_gif.webp");
-        background-position: center;
-        background-size: cover;
-        cursor: auto;
-    }
-
-    .cv {
-        border-radius: 20px;
-        font-family: Now;
-        background-color: $dark-blue;
-        cursor: pointer;
-        grid-area: 3;
-        background-color: rgb(18, 65, 221);
-        font-size: 80px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        color: rgb(160, 182, 255);
-        transition: 0.2s ease-in-out;
-        text-decoration: none;
-        grid-area: 3 / 1 / 4 / 1;
-
-        p {
-            font-size: 50px
-        };
-
-        &:hover {
-            transform: scale(1.03);
-            border: 1px solid $white;
-            box-shadow: 0px 0px 15px #ffffff9d;
-        }
-    }   
-
-    .english {
-        background-color: rgba(60, 40, 173, 0.699);
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        cursor: auto;
-
-
-        h1 {
-            text-align: center;
-            &:first-child {
-                color: rgb(132, 113, 236);
-            }
-
-            &:last-child {
-                font-family: Fira Code;
-                font-size: 50px;
-            }
-        }
-    }
-
-    .perfil {
-        grid-area: 1 / 1 / 3 / 3;
-        display: flex;
-        position: relative;
-
-        .perfil_info {
-            position: absolute;
-            bottom: 30px;
-            left: 30px;
-            padding-right: 20px;
-
-            h1 {
-                font-size: 30px;
-                margin-bottom: 10px;
-            }
-
-            p {
-                font-family: Montserrat;
-                font-weight: 500;
-            }
-
-
-        }
-
-    }
-
-    .mision_vision {
-        grid-area: 1 / 3 / 1 / 6;
-    }
-
-    .center {
-        grid-area: 2 / 3 / 2 / 5; 
-        background-color: rgba(31, 31, 31, 0.699);
+    .samuel {
+        grid-area: 1 / 1 / 1 / 3;
+        background-color: $gray;
         display: flex;
         align-items: center;
         gap: 30px;
@@ -211,77 +163,276 @@
 
         span {
             h1 {
-                font-size: 35px;
+                font-size: 2.2em;
             }
 
             p {
                 font-family: Fira Code;
                 font-weight: 500;
+                font-size: 1.1em;
 
             }
+        }
+    }
+
+    .perfil {
+        grid-row: 1 / 3;
+        grid-column: 3 / 5;
+        display: flex;
+        position: relative;
+        overflow: hidden;
+
+        i {
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            font-size: 20px;
+        }
+
+        
+        .perfil_info {
+            position: absolute;
+            top: 30%;
+            left: 30px;
+            padding-right: 20px;
+            width: 50%;
+            z-index: 10;
+
+            h1 {
+                font-size: 2.8em;
+                margin-bottom: 20px;
+            }
+
+            p {
+                font-family: Fira Code;
+                font-weight: 500;
+                font-size: 1.1em;
+                width: 90%;
+                color: #9ec2ff;
+            }
+        }
+
+        .animated_container {
+            position: absolute;
+            right: -100px;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+
+            // Imagen animada Samuel
+            img {
+                height: 100%;
+                filter: drop-shadow(2px 5px 10px rgba(0, 0, 0, 0.748));
+            }
+        }
+
+    }
+
+    .gif {
+        background-image: url("/coding_gif.webp");
+        background-position: center;
+        background-size: cover;
+        cursor: auto;
+    }
+
+    .perfil, .proyectos {
+        &:hover {
+            border: 2px solid white;
+        }
+    }
+
+    .cv {
+        cursor: pointer;
+        background-color: rgb(18, 65, 221);
+        font-size: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        color: rgb(160, 182, 255);
+        text-decoration: none;
+        position: relative;
+
+        i {
+            &:first-child {
+                font-size: 20px;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+        }
+
+        p {
+            font-size: 50px
+        };
+
+    }   
+
+    .proyectos {
+        grid-area: 3 / 1 / 5 / 3;
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        background-color: rgb(0, 122, 166);
+
+        i {
+            position: absolute;
+            right: 30px;
+            top: 30px;
+            font-size: 20px;
+        }
+
+        .proyectos_info {
+            position: absolute;
+            top: 30%;
+            right: 30px;
+            padding-left: 20px;
+            text-align: right;
+            width: 70%;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: end;
+
+            h1 {
+                font-size: 2.8em;
+            }
+
+            p {
+                font-family: Fira Code;
+                font-weight: 500;
+                font-size: 1.1em;
+                width: 90%;
+                color: rgb(206, 242, 255);
+
+            }
+        }
+
+        .proyectos_img_container {
+            position: absolute;
+            left: -200px;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+
+            img {
+                height: 100%;
+                filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.478));
+            }
+        }
+
+
+    }
+
+    .tech {
+        grid-area: 3 / 3 / 3 / 5;
+        background-color: #003d9e;
+        display: flex;
+        flex-direction: column;
+        place-content: unset;
+        padding: 30px;
+        gap: 15px;
+
+        .tech_container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(6, minmax(70px, 1fr));
+            gap: 15px;
+            grid-template-rows: repeat(2, 1fr);
+            position: relative;
+
+            .tech_item {
+                display: grid;
+                grid-template-rows: 50px 1fr;
+                gap: 5px;
+                font-family: Fira Code;
+                font-weight: 500;
+                font-size: 0.8em;
+                place-items: center;
+                color: #90bbff;
+
+                img {
+                    height: 100%;
+                }
+            }
+        }
+
+        .aprendizaje {
+            height: 90px;
+            width: 280px;
+            position: absolute;
+            bottom: -40px;
+            right: -20px
         }
     }
 
     .servicios {
-        grid-area: 2 / 5 / 2 / 7;
+        grid-area: 5 / 1 / 5 / 3;
         background-color: rgba(12, 110, 155, 0.678);
         display: flex;
         flex-direction: column;
-        justify-content: left;
+        justify-content: space-around;
         padding: 30px;
         gap: 15px;
         text-decoration: none;
+        cursor: auto;
 
-        h1 {
-            color: rgb(27, 163, 226);
-        }
-
-        .servicios_buttons {
+        .servicios_container {
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            width: 100%;
+            font-family: Fira Code;
+            font-weight: 500;
+            color: rgb(211, 240, 253);
 
-            button {
-                cursor: pointer;
-                font-family: Fira Code;
-                background-color: rgb(27, 163, 226);
-                border-radius: 10px;
-                padding-inline: 10px;
-                border: none;
-                height: 20px;
-                width: auto;
+            .servicios_left {
+                text-align: end;
             }
 
+            .servicios_left, img {
+                flex: 1;
+            }
+
+            img {
+                margin-inline: 15px;
+            }
+
+            .servicios_right {
+                flex: 1.2;
+            }
+
+            .servicios_left, .servicios_right {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+
+
+        }
+
+        h1 {
+            color: rgb(255, 255, 255);
+        }
+
+        img {
+            height: 170px;
         }
 
     }
 
-    .objetivos {
-        grid-area: 3 / 4 / 5 / 5;
-    }
-
-    .proyectos {
-        grid-area: 3 / 2 / 5 / 4;
-    }
-
-    .certificaciones {
-        grid-area: 4 / 1 / 5 / 1;
-    }
-
-    .contactame {
-        grid-area: 4 / 5 / 4 / 7;
-        display: flex;
-        align-items: center;
-        gap: 50px;
+    .contact {
+        grid-area: 5 / 3 / 5 / 4;
+        background-color: #003139;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
         cursor: auto;
+        gap: 20px;
+        padding: 25px;
 
         .icon {
             color: white;
             background: none;
-            width: auto;
-            font-size: 60px;
-            max-height: 55px;
+            font-size: 70px;
             transition: 0.2s ease-in-out;
             filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.678));
             
@@ -291,9 +442,436 @@
         }
     }
 
+    .english {
+        display: flex;
+        flex-direction: column;
+        cursor: auto;
+        background-color: rgba(60, 40, 173, 0.699);
+
+        h1 {
+            text-align: center;
+
+            &:first-child {
+                font-size: 1.4em;
+                color: rgb(132, 113, 236);
+                
+            }
+
+            &:last-child {
+                font-family: Fira Code;
+                font-size: 7em;
+            }
+        }
+    }
+
+    @media (width < 1200px) {
+        .container {
+            width: 100%;
+            display: grid;
+            place-content: center;
+            grid-template-columns: repeat(4, 200px);
+            grid-auto-rows: 200px;
+            gap: 20px;
+        }
+
+        .samuel {
+            gap: 15px;
+
+            .logo {
+                height: 100px;
+            }
+
+            span {
+                h1 {
+                    font-size: 2em;
+                }
+
+                p {
+                    font-size: 1em;
+                }
+            }
+        }
+
+        .perfil {
+            display: block;
+            position: relative;
+
+            .perfil_info {
+                position: absolute;
+                top: 25%;
+                left: 30px;
+                padding-right: 20px;
+                width: 50%;
+                z-index: 10;
+
+                h1 {
+                    font-size: 2.2em;
+                    margin-bottom: 20px;
+                }
+
+                p {
+                    font-family: Fira Code;
+                    font-weight: 500;
+                    font-size: 1.1em;
+                    width: 90%;
+                    color: #9ec2ff;
+                }
+            }
+
+            .animated_container {
+                bottom: 0px;
+                right: -80px;
+                height: 90%;
+                object-fit: cover;
+                z-index: 1;
+
+                // Imagen animada Samuel
+                img {
+                    height: 100%;
+                    filter: drop-shadow(2px 5px 10px rgba(0, 0, 0, 0.748));
+                }
+            }
+        }
+
+
+        .proyectos {
+            .proyectos_info {
+                h1 {
+                    font-size: 2.2em;
+                }
+
+                p {
+                    font-size: 1.1em;
+                }
+            }
+
+            .proyectos_img_container {
+                position: absolute;
+                left: -160px;
+                height: 100%;
+                object-fit: cover;
+                z-index: 1;
+
+                img {
+                    height: 100%;
+                    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.478));
+                }
+            }
+
+
+        }
+
+        .tech {
+            grid-area: 3 / 3 / 3 / 5;
+            background-color: #003d9e;
+            display: flex;
+            flex-direction: column;
+            place-content: unset;
+            padding: 20px;
+            gap: 15px;
+
+            h1 {
+                font-size: 1.2em;
+            }
+
+            .tech_container {
+                grid-template-columns: repeat(5, minmax(70px, 1fr));
+                column-gap: 0px;
+
+                .tech_item {
+                    grid-template-rows: 50px 1fr;
+
+                    p {
+                        display: none;
+                    }
+                }
+
+                .aprendizaje {
+                    display: none;
+                }
+            }
+        }
+
+        .servicios {
+            padding: 20px;
+            
+            .servicios_container {
+                font-size: 0.9em;
+
+                img {
+                    height: 120px;
+                }
+            }
+        }
+
+        .contact {
+            .icon {
+                font-size: 50px;
+            }
+        }
+
+        .english {
+            h1 {
+                &:first-child {
+                    font-size: 1.2em;
+                }
+
+                &:last-child {
+                    font-size: 5em;
+                }
+            }
+        }
+
+    }
+
+    @media (width < 900px) {
+        .container {
+            width: 100%;
+            display: grid;
+            place-content: center;
+            grid-template-columns: repeat(3, 120px);
+            grid-auto-rows: 120px;
+            gap: 12px;
+        }
+
+        .samuel {
+            grid-area: 1 / span 2;
+            gap: 15px;
+
+            .logo {
+                height: 50px;
+                aspect-ratio: 1/1;
+                filter: drop-shadow(0px 2px 8px $black);
+            }
+
+            span {
+                h1 {
+                    font-size: 1.1em;
+                }
+
+                p {
+                    font-size: 0.6em;
+                }
+            }
+        }
+
+        .contact {
+            grid-area: 1 / 3;
+            gap: 10px;
+            padding: 20px;
+
+            .icon {
+                font-size: 30px;
+            }
+        }
+
+        .cv {
+            gap: 4px;
+
+            i {
+                font-size: 40px;
+                &:first-child {
+                    font-size: 15px;
+                    top: 15px;
+                    right: 15px;
+                }
+            }
+
+            p {
+                font-size: 30px
+            };
+
+        }
+        
+        .english {
+            h1 {
+                &:first-child {
+                    font-size: 0.75em;
+                    
+                }
+                &:last-child {
+                    font-size: 3em;
+                }
+            }
+        }
+
+        .perfil {
+            grid-area: 2 / 2 / 4 / 4;
+
+            i {
+                position: absolute;
+                left: 15px;
+                top: 15px;
+                font-size: 15px;
+            }
+
+            
+            .perfil_info {
+                position: absolute;
+                top: 30%;
+                left: 30px;
+                padding-right: 20px;
+                width: 50%;
+                z-index: 10;
+
+                h1 {
+                    font-size: 1.2em;
+                    margin-bottom: 20px;
+                }
+
+                p {
+                    font-family: Fira Code;
+                    font-weight: 500;
+                    font-size: 0.6em;
+                    width: 90%;
+                    color: #9ec2ff;
+                }
+            }
+
+            .animated_container {
+                position: absolute;
+                right: -60px;
+                height: 100%;
+                object-fit: cover;
+                z-index: 1;
+
+                // Imagen animada Samuel
+                img {
+                    height: 100%;
+                    filter: drop-shadow(2px 5px 10px rgba(0, 0, 0, 0.748));
+                }
+            }
+
+        }
+
+        .gif {
+            grid-area: 4 / 3;
+            background-image: url("/coding_gif.webp");
+            background-position: center;
+            background-size: cover;
+            cursor: auto;
+        }
+
+        .proyectos {
+            grid-area: 4 / 1 / 6 / 3;
+            display: flex;
+            position: relative;
+            overflow: hidden;
+            background-color: rgb(0, 122, 166);
+
+            i {
+                position: absolute;
+                right: 15px;
+                top: 15px;
+                font-size: 15px;
+            }
+
+            .proyectos_info {
+
+                h1 {
+                    font-size: 1.2em;
+                }
+
+                p {
+                    font-size: 0.6em;
+
+                }
+            }
+
+            .proyectos_img_container {
+                left: -100px;
+            }
+
+
+        }
+
+        .tech {
+            grid-area: 5 / 3 / 7 / 3;
+            background-color: #003d9e;
+            padding: 5px;
+            place-content: center;
+            
+            h1 {
+                display: none;
+            }
+
+            .tech_container {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap-row: 10px;
+                position: relative;
+                place-content: center;
+
+                .tech_item {
+                    display: grid;
+                    grid-template-rows: 35px;
+                    height: 100%;
+                    place-items: center;
+                    color: #90bbff;
+
+                    img {
+                        height: 100%;
+                    }
+                }
+            }
+
+            .aprendizaje {
+                display: none;
+            }
+        }
+
+        .servicios {
+            grid-area: 6 / 1 / 6 / 3;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 10px;
+
+            h1 {
+                display: none;
+            }
+
+            .servicios_container {
+                display: flex;
+                font-family: Fira Code;
+                font-weight: 500;
+                color: rgb(211, 240, 253);
+                font-size: 0.8em;
+                gap: 0px;
+
+                .servicios_left {
+                    text-align: end;
+                    flex: 1;
+                    border-right: 2px solid rgb(211, 240, 253);
+                    padding-right: 8px;
+
+                    border-radius: 20px 0px 0px 20px;
+                }
+
+                img {
+                    display: none;
+                }
+
+                .servicios_right {
+                    color:rgb(167, 164, 255)1 ;
+                    border-radius: 0px 20px 20px 0px;
+                    flex: 1.2;
+                    padding-left: 7px;
+                }
+
+                .servicios_left, .servicios_right {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                }
+
+
+            }
+
+        }
 
 
 
-
-    
+    }
 </style>
