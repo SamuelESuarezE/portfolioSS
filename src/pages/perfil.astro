@@ -27,14 +27,23 @@ import Layout from "../layouts/Layout.astro"
             <p>Autodidacta</p>
         </div>
         <div class="mision-vision">
-            <div class="mision">
+            <div>
                 <h1>MISIÓN</h1>
                 <p>Mi misión es crear soluciones tecnológicas innovadoras y eficientes que impulsen el desarrollo de proyectos en el ámbito digital. A través de mi enfoque competitivo, capacidad de adaptación y aprendizaje ágil, busco ofrecer un impacto positivo en cada proyecto en el que participo, superando desafíos técnicos y organizativos con responsabilidad y disciplina.</p>
             </div>
-            <div class="vision">
+            <div>
                 <h1>VISIÓN</h1>
-                <p>Mi visión es convertirme en un arquitecto de software reconocido, especializado en infraestructura, servidores, DevOps y ciberseguridad. Aspiro a ser un referente en la creación de sistemas robustos y seguros, contribuyendo de manera significativa al crecimiento y éxito de las organizaciones en un entorno tecnológico en constante evolución.</p>
+                <p>Mi visión es convertirme en un arquitecto de software reconocido, especializado en infraestructura, servidores, backend y ciberseguridad. Aspiro a ser un referente en la creación de sistemas robustos y seguros, contribuyendo de manera significativa al crecimiento y éxito de las organizaciones en un entorno tecnológico en constante evolución.</p>
             </div>
+        </div>
+        <div class="objetivos-profesionales">
+            <h1>OBJETIVOS</h1>
+            <ul>
+                <li><b>Liderar Proyectos Complejos:</b> Desarrollar y gestionar proyectos de software avanzados, creando arquitecturas escalables y soluciones innovadoras.</li>
+                <li><b>Especialización en Backend:</b> Obtener certificaciones y experiencia en desarrollo backend para diseñar y mantener sistemas robustos y eficientes.</li>
+                <li><b>Innovar Continuamente:</b> Mantenerme actualizado con las últimas tecnologías y tendencias para implementar soluciones avanzadas y eficientes.</li>
+                <li><b>Fortalecer Habilidades de Comunicación y Colaboración:</b> Fomentar un entorno de trabajo colaborativo, utilizando habilidades organizativas para superar desafíos en equipos multidisciplinarios.</li>
+            </ul>
         </div>
         <div class="certificaciones">
             <h1>CERTIFICACIONES</h1>
@@ -76,8 +85,30 @@ import Layout from "../layouts/Layout.astro"
 
 
 
+
 <style lang="scss">
     @import url("../styles/global.sass");
+
+    .objetivos-profesionales {
+        margin: 50px 0;
+        color: $white;
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+
+            li {
+                font-size: 1em;
+                margin-bottom: 15px;
+                font-family: Montserrat;
+            }
+        }
+    }
 
     .certificaciones {
     
@@ -152,7 +183,7 @@ import Layout from "../layouts/Layout.astro"
         margin-block: 50px;
         gap: 30px;
 
-        .mision, .vision {
+        div {
             p {
                 margin-top: 20px;
             }
